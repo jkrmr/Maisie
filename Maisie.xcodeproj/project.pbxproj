@@ -13,6 +13,9 @@
 		1B1436AC1F30CFA400A8D216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1436AB1F30CFA400A8D216 /* Assets.xcassets */; };
 		1B1436AF1F30CFA400A8D216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B1436AD1F30CFA400A8D216 /* LaunchScreen.storyboard */; };
 		1B1436BA1F30CFA400A8D216 /* MaisieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1436B91F30CFA400A8D216 /* MaisieTests.swift */; };
+		1B1436CA1F30EC7400A8D216 /* TakeHomeTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */; };
+		1B1436CC1F30ECB200A8D216 /* TakeHomeTask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1436CB1F30ECB200A8D216 /* TakeHomeTask.xcassets */; };
+		1B1436CE1F30F8B800A8D216 /* TakeHomeTask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +28,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1B1436CF1F30F8B800A8D216 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B1436CE1F30F8B800A8D216 /* TakeHomeTask.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1B1436A11F30CFA400A8D216 /* Maisie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maisie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1436A41F30CFA400A8D216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +53,8 @@
 		1B1436B51F30CFA400A8D216 /* MaisieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaisieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B1436B91F30CFA400A8D216 /* MaisieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaisieTests.swift; sourceTree = "<group>"; };
 		1B1436BB1F30CFA400A8D216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TakeHomeTask.framework; sourceTree = "<group>"; };
+		1B1436CB1F30ECB200A8D216 /* TakeHomeTask.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TakeHomeTask.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B1436CA1F30EC7400A8D216 /* TakeHomeTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +82,7 @@
 				1B1436A31F30CFA400A8D216 /* Maisie */,
 				1B1436B81F30CFA400A8D216 /* MaisieTests */,
 				1B1436A21F30CFA400A8D216 /* Products */,
+				1B1436C61F30EBF000A8D216 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +102,7 @@
 				1B1436A61F30CFA400A8D216 /* ViewController.swift */,
 				1B1436A81F30CFA400A8D216 /* Main.storyboard */,
 				1B1436AB1F30CFA400A8D216 /* Assets.xcassets */,
+				1B1436CB1F30ECB200A8D216 /* TakeHomeTask.xcassets */,
 				1B1436AD1F30CFA400A8D216 /* LaunchScreen.storyboard */,
 				1B1436B01F30CFA400A8D216 /* Info.plist */,
 			);
@@ -96,6 +118,14 @@
 			path = MaisieTests;
 			sourceTree = "<group>";
 		};
+		1B1436C61F30EBF000A8D216 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +136,7 @@
 				1B14369D1F30CFA400A8D216 /* Sources */,
 				1B14369E1F30CFA400A8D216 /* Frameworks */,
 				1B14369F1F30CFA400A8D216 /* Resources */,
+				1B1436CF1F30F8B800A8D216 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +214,7 @@
 			files = (
 				1B1436AF1F30CFA400A8D216 /* LaunchScreen.storyboard in Resources */,
 				1B1436AC1F30CFA400A8D216 /* Assets.xcassets in Resources */,
+				1B1436CC1F30ECB200A8D216 /* TakeHomeTask.xcassets in Resources */,
 				1B1436AA1F30CFA400A8D216 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +374,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M94KDK654M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Maisie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkrmr.Maisie;
@@ -355,6 +391,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M94KDK654M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Maisie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkrmr.Maisie;
