@@ -13,6 +13,11 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    MazeManager()
+      .fetchRoom(withIdentifier: "R4b7f8b8bd464e959") { (data, error) in
+        print(data!)
+    }
   }
 
   override func didReceiveMemoryWarning() {

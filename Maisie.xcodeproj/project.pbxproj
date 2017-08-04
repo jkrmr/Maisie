@@ -452,6 +452,7 @@
 				1B1436C01F30CFA400A8D216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B1436C11F30CFA400A8D216 /* Build configuration list for PBXNativeTarget "MaisieTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +461,7 @@
 				1B1436C31F30CFA400A8D216 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
