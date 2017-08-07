@@ -14,9 +14,16 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    MazeManager()
-      .fetchRoom(withIdentifier: "R4b7f8b8bd464e959") { (data, error) in
-        print(data!)
+    MazeManager().fetchStartRoom { (data, error) in
+      if let error = error { return print(error) }
+      guard let data = data else { return print("no data") }
+
+      if let json = try? JSONSerialization
+        .jsonObject(with: data, options: .mutableContainers)
+        as? [String: String] {
+
+        print(json!["id"]!)
+      }
     }
   }
 
