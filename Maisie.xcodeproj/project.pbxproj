@@ -16,6 +16,8 @@
 		1B1436CA1F30EC7400A8D216 /* TakeHomeTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */; };
 		1B1436CC1F30ECB200A8D216 /* TakeHomeTask.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1436CB1F30ECB200A8D216 /* TakeHomeTask.xcassets */; };
 		1B1436CE1F30F8B800A8D216 /* TakeHomeTask.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8D1196FD116A26580DCA7680 /* Pods_Maisie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF6DF85B4C10B3292E9DF8E /* Pods_Maisie.framework */; };
+		8FF01A4C0638B0EE808C2A3F /* Pods_MaisieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB1CAB16506A72B08D5BE78 /* Pods_MaisieTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,12 @@
 		1B1436BB1F30CFA400A8D216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TakeHomeTask.framework; sourceTree = "<group>"; };
 		1B1436CB1F30ECB200A8D216 /* TakeHomeTask.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TakeHomeTask.xcassets; sourceTree = "<group>"; };
+		4AF6DF85B4C10B3292E9DF8E /* Pods_Maisie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maisie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB1CAB16506A72B08D5BE78 /* Pods_MaisieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaisieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8397452B3507F491D8AB8D47 /* Pods-MaisieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaisieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaisieTests/Pods-MaisieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		90F16894456BB04EAC5A3623 /* Pods-Maisie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maisie.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maisie/Pods-Maisie.release.xcconfig"; sourceTree = "<group>"; };
+		91440BA0F0CF91DD4FD4D096 /* Pods-Maisie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maisie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maisie/Pods-Maisie.debug.xcconfig"; sourceTree = "<group>"; };
+		BDB374DCAEDFC8A9C53ECF53 /* Pods-MaisieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaisieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaisieTests/Pods-MaisieTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B1436CA1F30EC7400A8D216 /* TakeHomeTask.framework in Frameworks */,
+				8D1196FD116A26580DCA7680 /* Pods_Maisie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF01A4C0638B0EE808C2A3F /* Pods_MaisieTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +93,7 @@
 				1B1436B81F30CFA400A8D216 /* MaisieTests */,
 				1B1436A21F30CFA400A8D216 /* Products */,
 				1B1436C61F30EBF000A8D216 /* Frameworks */,
+				B460BC806CC3376502C47BF0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				1B1436C91F30EC7400A8D216 /* TakeHomeTask.framework */,
+				4AF6DF85B4C10B3292E9DF8E /* Pods_Maisie.framework */,
+				7EB1CAB16506A72B08D5BE78 /* Pods_MaisieTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +179,17 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		B460BC806CC3376502C47BF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91440BA0F0CF91DD4FD4D096 /* Pods-Maisie.debug.xcconfig */,
+				90F16894456BB04EAC5A3623 /* Pods-Maisie.release.xcconfig */,
+				8397452B3507F491D8AB8D47 /* Pods-MaisieTests.debug.xcconfig */,
+				BDB374DCAEDFC8A9C53ECF53 /* Pods-MaisieTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,10 +197,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B1436BE1F30CFA400A8D216 /* Build configuration list for PBXNativeTarget "Maisie" */;
 			buildPhases = (
+				0D12D035729448A27EBF20C9 /* [CP] Check Pods Manifest.lock */,
 				1B14369D1F30CFA400A8D216 /* Sources */,
 				1B14369E1F30CFA400A8D216 /* Frameworks */,
 				1B14369F1F30CFA400A8D216 /* Resources */,
 				1B1436CF1F30F8B800A8D216 /* Embed Frameworks */,
+				E47147633C8D03D6B4513D81 /* [CP] Embed Pods Frameworks */,
+				EB2C91985CF90767454C1D83 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,9 +218,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B1436C11F30CFA400A8D216 /* Build configuration list for PBXNativeTarget "MaisieTests" */;
 			buildPhases = (
+				A3BD91277DE6428541E3919E /* [CP] Check Pods Manifest.lock */,
 				1B1436B11F30CFA400A8D216 /* Sources */,
 				1B1436B21F30CFA400A8D216 /* Frameworks */,
 				1B1436B31F30CFA400A8D216 /* Resources */,
+				8A7B1CBA7844DF18F2794A44 /* [CP] Embed Pods Frameworks */,
+				AD6AAD0A71EA7AA35699A33D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +297,108 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D12D035729448A27EBF20C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Maisie-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A7B1CBA7844DF18F2794A44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaisieTests/Pods-MaisieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3BD91277DE6428541E3919E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MaisieTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6AAD0A71EA7AA35699A33D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaisieTests/Pods-MaisieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E47147633C8D03D6B4513D81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Maisie/Pods-Maisie-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maisie/Pods-Maisie-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB2C91985CF90767454C1D83 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Maisie/Pods-Maisie-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B14369D1F30CFA400A8D216 /* Sources */ = {
@@ -411,6 +543,7 @@
 		};
 		1B1436BF1F30CFA400A8D216 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91440BA0F0CF91DD4FD4D096 /* Pods-Maisie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M94KDK654M;
@@ -428,6 +561,7 @@
 		};
 		1B1436C01F30CFA400A8D216 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90F16894456BB04EAC5A3623 /* Pods-Maisie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = M94KDK654M;
@@ -445,6 +579,7 @@
 		};
 		1B1436C21F30CFA400A8D216 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8397452B3507F491D8AB8D47 /* Pods-MaisieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -460,6 +595,7 @@
 		};
 		1B1436C31F30CFA400A8D216 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB374DCAEDFC8A9C53ECF53 /* Pods-MaisieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
