@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MazeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Maisie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MazeVC" customModule="Maisie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,67 +25,124 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="QFS-ke-eYT" userLabel="Background Image">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PHO-bA-o7c">
-                                <rect key="frame" x="0.0" y="452" width="375" height="215"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HLR-xn-FoF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejv-JQ-qTm">
-                                                <rect key="frame" x="16" y="0.0" width="343" height="100"/>
-                                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
-                                                <state key="normal" title="Generate" backgroundImage="Button"/>
-                                            </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="1V5-yY-DYd">
-                                                <rect key="frame" x="0.0" y="115" width="375" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rom-bX-675">
-                                                        <rect key="frame" x="0.0" y="0.0" width="180" height="100"/>
-                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
-                                                        <state key="normal" title="Lorem" backgroundImage="Button">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIw-Wr-hHI">
-                                                        <rect key="frame" x="195" y="0.0" width="180" height="100"/>
-                                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
-                                                        <state key="normal" title="Ipsum" backgroundImage="Button">
-                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                    </button>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="rom-bX-675" firstAttribute="width" secondItem="oIw-Wr-hHI" secondAttribute="width" id="Vuf-6w-nND"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R84-vc-dpx">
-                                <rect key="frame" x="16" y="28" width="343" height="416"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="huK-Je-bku">
+                                <rect key="frame" x="16" y="20" width="343" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="Zhx-QX-c6R"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="edz-CG-p9G">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MazeCell" id="niK-4U-P4o">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QL-Rh-bMz">
+                                <rect key="frame" x="16" y="445" width="343" height="202"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejv-JQ-qTm">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="79" id="x0l-L0-FF7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
+                                        <state key="normal" title="Generate" backgroundImage="Button"/>
+                                        <connections>
+                                            <action selector="generateButtonWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RmA-F1-Udd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rom-bX-675">
+                                        <rect key="frame" x="0.0" y="99" width="155" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="155" id="KQ4-Mr-Q1i"/>
+                                            <constraint firstAttribute="height" constant="71" id="OAS-yA-XiZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
+                                        <state key="normal" title="Lorem" backgroundImage="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="100" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIw-Wr-hHI">
+                                        <rect key="frame" x="191" y="99" width="152" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="152" id="fxh-zV-ZC4"/>
+                                            <constraint firstAttribute="height" constant="71" id="zQY-Ha-Em4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="20"/>
+                                        <state key="normal" title="Ipsum" backgroundImage="Button">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="sSD-iZ-EeA">
+                                        <rect key="frame" x="0.0" y="182" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="W8h-0r-qVb"/>
+                                            <constraint firstAttribute="height" constant="20" id="haZ-Fp-I37"/>
+                                        </constraints>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJ4-RN-efP">
+                                        <rect key="frame" x="237" y="177" width="106" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="CcH-VJ-Dl5"/>
+                                            <constraint firstAttribute="width" constant="106" id="tZE-Ic-Y1L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="202" id="0qQ-Fe-ESb"/>
+                                    <constraint firstItem="rom-bX-675" firstAttribute="leading" secondItem="3QL-Rh-bMz" secondAttribute="leading" id="2NX-Fy-dzc"/>
+                                    <constraint firstAttribute="bottom" secondItem="sSD-iZ-EeA" secondAttribute="bottom" id="69h-Yc-zsu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ejv-JQ-qTm" secondAttribute="trailing" id="7w4-wY-RFF"/>
+                                    <constraint firstAttribute="bottom" secondItem="oIw-Wr-hHI" secondAttribute="bottom" constant="32" id="Iq5-DZ-BH4"/>
+                                    <constraint firstItem="Ejv-JQ-qTm" firstAttribute="leading" secondItem="3QL-Rh-bMz" secondAttribute="leading" id="Uvc-iI-6jY"/>
+                                    <constraint firstItem="Ejv-JQ-qTm" firstAttribute="top" secondItem="3QL-Rh-bMz" secondAttribute="top" id="Vai-Gr-5If"/>
+                                    <constraint firstAttribute="bottom" secondItem="FJ4-RN-efP" secondAttribute="bottom" id="gCY-8U-taJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="FJ4-RN-efP" secondAttribute="trailing" id="goQ-sc-r5k"/>
+                                    <constraint firstItem="sSD-iZ-EeA" firstAttribute="leading" secondItem="3QL-Rh-bMz" secondAttribute="leading" id="pC0-42-6sQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="oIw-Wr-hHI" secondAttribute="trailing" id="r29-Ao-5hx"/>
+                                    <constraint firstAttribute="bottom" secondItem="rom-bX-675" secondAttribute="bottom" constant="32" id="uoZ-k3-APe"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="QFS-ke-eYT" secondAttribute="trailing" id="5VN-t8-1Xo"/>
-                            <constraint firstItem="R84-vc-dpx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7df-qy-KYz"/>
-                            <constraint firstItem="QFS-ke-eYT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Idx-lF-yAS"/>
-                            <constraint firstItem="PHO-bA-o7c" firstAttribute="top" secondItem="R84-vc-dpx" secondAttribute="bottom" constant="8" id="NQe-j0-5yF"/>
-                            <constraint firstAttribute="trailing" secondItem="PHO-bA-o7c" secondAttribute="trailing" id="O3e-hq-39P"/>
-                            <constraint firstAttribute="bottom" secondItem="PHO-bA-o7c" secondAttribute="bottom" id="Sd7-PL-GoK"/>
-                            <constraint firstItem="QFS-ke-eYT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kZV-8E-WRN"/>
-                            <constraint firstItem="PHO-bA-o7c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pVV-Jd-Er5"/>
-                            <constraint firstItem="R84-vc-dpx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="qw7-3Y-weE"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QFS-ke-eYT" secondAttribute="bottom" id="s2V-6c-xIJ"/>
-                            <constraint firstItem="R84-vc-dpx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wjy-23-tcc"/>
+                            <constraint firstItem="QFS-ke-eYT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bg2-cj-lRI"/>
+                            <constraint firstItem="QFS-ke-eYT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ju6-BY-Vzi"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KqR-St-arm"/>
+                            <constraint firstAttribute="trailing" secondItem="QFS-ke-eYT" secondAttribute="trailing" id="LYc-HN-bnw"/>
+                            <constraint firstItem="3QL-Rh-bMz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TjW-S5-mOJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QFS-ke-eYT" secondAttribute="bottom" id="Xuy-xd-oyn"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rIr-PC-EBg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3QL-Rh-bMz" secondAttribute="bottom" constant="20" id="tHZ-Ct-nNF"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u2p-zT-OL0"/>
+                            <constraint firstItem="3QL-Rh-bMz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uBP-hR-EhA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="huK-Je-bku" id="hMH-2v-2je"/>
+                        <outlet property="generateButton" destination="Ejv-JQ-qTm" id="qAt-Vj-Yv6"/>
+                        <outlet property="loadingIndicator" destination="sSD-iZ-EeA" id="c0b-cZ-IKK"/>
+                        <outlet property="timeLabel" destination="FJ4-RN-efP" id="YQl-K2-tQ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="115"/>
+            <point key="canvasLocation" x="133.59999999999999" y="114.69265367316342"/>
         </scene>
     </scenes>
     <resources>
