@@ -20,7 +20,7 @@ final class Room: Decodable {
   let neighbors: [RoomPointer]
 
   /// Pointers to adjacent rooms that have not already been encountered.
-  /// Whether or not a room has been encountered is determined by checking 
+  /// Whether or not a room has been encountered is determined by checking
   /// the maze cache. This check is needed in order to stop the graph traversal
   /// that builds the maze.
   var newNeighbors: [RoomPointer] {

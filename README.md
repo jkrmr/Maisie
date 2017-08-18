@@ -117,47 +117,6 @@ class MazeVC: UIViewController {
   </a>
 </sup>
 
-```swift
-// Maisie/Controllers/MazeVC.swift L48-L79 (235cf32b)
-
-// MARK: MazeDelegate
-extension MazeVC: MazeDelegate {
-  func didBeginLoadingMaze() {
-    mazeTimer.startTiming()
-    loadingIndicator.startAnimating()
-    generateButton.isEnabled = false
-    loadingIndicator.isHidden = false
-    timeLabel.isHidden = false
-  }
-
-  func didBeginTraversal() {
-    timeLabel.text = mazeTimer.durationString
-  }
-
-  func didUpdateMaze(grid: [[Room?]]) {
-    rooms = grid
-    guard let columns = grid.first?.count else { return }
-    // update flow layout with the number of columns now present
-    mazeViewFlowLayout.update(columns: columns)
-    collectionView.collectionViewLayout = mazeViewFlowLayout
-  }
-
-  func didEndTraversal() {
-    timeLabel.text = mazeTimer.durationString
-  }
-
-  func didEndLoadingMaze() {
-    loadingIndicator.stopAnimating()
-    loadingIndicator.isHidden = true
-    generateButton.isEnabled = true
-  }
-}
-```
-<sup>
-  <a href="https://github.com/jkrmr/Maisie/blob/235cf32b/Maisie/Controllers/MazeVC.swift#L48-L79">
-    Maisie/Controllers/MazeVC.swift#L48-L79 (235cf32b)
-  </a>
-</sup>
 
 ```swift
 // Maisie/Models/Maze.swift L40-L54 (235cf32b)
@@ -255,5 +214,148 @@ final class MazeCache {
 <sup>
   <a href="https://github.com/jkrmr/Maisie/blob/235cf32b/Maisie/Models/Maze.swift#L70-L93">
     Maisie/Models/Maze.swift#L70-L93 (235cf32b)
+  </a>
+</sup>
+
+```swift
+// Maisie/Models/Room.swift L22-L37 (d2cb1090)
+
+  /// Pointers to adjacent rooms that have not already been encountered.
+  /// Whether or not a room has been encountered is determined by checking
+  /// the maze cache. This check is needed in order to stop the graph traversal
+  /// that builds the maze.
+  var newNeighbors: [RoomPointer] {
+    return neighbors.filter { roomPointer in
+      !MazeCache.shared.contains(roomWithId: roomPointer.targetId)
+    }
+  }
+
+  /// Promises returning adjacent Rooms that have not been encountered before.
+  var neighboringRooms: [Promise<Room>] {
+    return newNeighbors.map { roomPointer in
+      roomPointer.getRoom(from: self)
+    }
+  }
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/d2cb1090/Maisie/Models/Room.swift#L22-L37">
+    Maisie/Models/Room.swift#L22-L37 (d2cb1090)
+  </a>
+</sup>
+
+```swift
+// Maisie/Models/RoomPointer.swift L45-L54 (d2cb1090)
+
+  /// Return a Promise to the Room pointed to by this RoomPointer.
+  func getRoom(from origin: Room) -> Promise<Room> {
+    return fetchRoom(roomId: targetId, originCoordinates: origin.coordinates)
+  }
+
+  fileprivate func fetchRoom(roomId: String, originCoordinates coords: Coordinates)
+    -> Promise<Room> {
+    let target = Coordinates.inDirection(self.direction, fromOrigin: coords)
+    return MazeAPI.shared.fetchRoom(roomId: roomId, coordinates: target)
+  }
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/d2cb1090/Maisie/Models/RoomPointer.swift#L45-L54">
+    Maisie/Models/RoomPointer.swift#L45-L54 (d2cb1090)
+  </a>
+</sup>
+
+```swift
+// Maisie/Models/RoomPointer.swift L57-L74 (d2cb1090)
+
+class LockedRoomPointer: RoomPointer {
+  /// A specialization of `getRoom` that first unlocks the given room to get
+  /// the room ID, then returns a promise that resolves to that Room.
+  ///
+  /// - Parameters:
+  ///   - origin: The origin Room from which to understand the pointer's
+  ///             direction.
+  ///
+  override func getRoom(from origin: Room) -> Promise<Room> {
+    return firstly {
+      return MazeAPI.shared.unlockRoom(lockId: targetId)
+    }.then { roomId in
+      return self.fetchRoom(roomId: roomId, originCoordinates: origin.coordinates)
+    }.catch { error in
+      print("Error: \(error)")
+    }
+  }
+}
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/d2cb1090/Maisie/Models/RoomPointer.swift#L57-L74">
+    Maisie/Models/RoomPointer.swift#L57-L74 (d2cb1090)
+  </a>
+</sup>
+
+
+```swift
+// Maisie/Controllers/MazeVC.swift L48-L79 (235cf32b)
+
+// MARK: MazeDelegate
+extension MazeVC: MazeDelegate {
+  func didBeginLoadingMaze() {
+    mazeTimer.startTiming()
+    loadingIndicator.startAnimating()
+    generateButton.isEnabled = false
+    loadingIndicator.isHidden = false
+    timeLabel.isHidden = false
+  }
+
+  func didBeginTraversal() {
+    timeLabel.text = mazeTimer.durationString
+  }
+
+  func didUpdateMaze(grid: [[Room?]]) {
+    rooms = grid
+    guard let columns = grid.first?.count else { return }
+    // update flow layout with the number of columns now present
+    mazeViewFlowLayout.update(columns: columns)
+    collectionView.collectionViewLayout = mazeViewFlowLayout
+  }
+
+  func didEndTraversal() {
+    timeLabel.text = mazeTimer.durationString
+  }
+
+  func didEndLoadingMaze() {
+    loadingIndicator.stopAnimating()
+    loadingIndicator.isHidden = true
+    generateButton.isEnabled = true
+  }
+}
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/235cf32b/Maisie/Controllers/MazeVC.swift#L48-L79">
+    Maisie/Controllers/MazeVC.swift#L48-L79 (235cf32b)
+  </a>
+</sup>
+
+```swift
+// Maisie/Controllers/MazeVC.swift L101-L116 (d2cb1090)
+
+  func collectionView(_ collectionView: UICollectionView,
+                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let room = rooms[indexPath.section][indexPath.row]
+
+    if let room = room {
+      let cell = collectionView
+        .dequeueReusableCell(withReuseIdentifier: MazeCell.reuseID,
+                             for: indexPath) as! MazeCell
+      cell.configure(room: room)
+      return cell
+    } else {
+      let emptyCell = collectionView
+        .dequeueReusableCell(withReuseIdentifier: EmptyMazeCell.reuseID,
+                             for: indexPath) as! EmptyMazeCell
+      return emptyCell
+    }
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/d2cb1090/Maisie/Controllers/MazeVC.swift#L101-L116">
+    Maisie/Controllers/MazeVC.swift#L101-L116 (d2cb1090)
   </a>
 </sup>

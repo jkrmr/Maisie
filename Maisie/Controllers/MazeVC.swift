@@ -78,6 +78,7 @@ extension MazeVC: MazeDelegate {
   }
 }
 
+// MARK: UICollectionViewDelegateFlowLayout
 extension MazeVC: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
@@ -86,7 +87,7 @@ extension MazeVC: UICollectionViewDelegateFlowLayout {
   }
 }
 
-// MARK: Collection View Data Source
+// MARK: UICollectionViewDataSource
 extension MazeVC: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return rooms.count
