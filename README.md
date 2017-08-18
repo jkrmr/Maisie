@@ -359,3 +359,22 @@ extension MazeVC: MazeDelegate {
     Maisie/Controllers/MazeVC.swift#L101-L116 (d2cb1090)
   </a>
 </sup>
+
+```swift
+// Maisie/Models/Maze.swift L56-L64 (64bad87c)
+
+  /// Add a room to the known maze.
+  /// Stores the new room's coordinates, then regenerates the maze grid
+  /// from the set of all currently known coordinates.
+  /// Notifies the delegate that the maze has been updated.
+  func add(room: Room) {
+    roomCoordinates.insert(room.coordinates)
+    regenerateGrid()
+    delegate?.didUpdateMaze(grid: grid)
+  }
+```
+<sup>
+  <a href="https://github.com/jkrmr/Maisie/blob/64bad87c/Maisie/Models/Maze.swift#L56-L64">
+    Maisie/Models/Maze.swift#L56-L64 (64bad87c)
+  </a>
+</sup>
