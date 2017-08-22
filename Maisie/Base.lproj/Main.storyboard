@@ -25,11 +25,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="QFS-ke-eYT" userLabel="Background Image">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Border" translatesAutoresizingMaskIntoConstraints="NO" id="SFs-5q-0kH">
+                                <rect key="frame" x="6" y="20" width="363" height="410"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="410" id="jAg-bC-O1P"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="huK-Je-bku">
-                                <rect key="frame" x="16" y="20" width="343" height="400"/>
+                                <rect key="frame" x="16" y="28" width="343" height="392"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Zhx-QX-c6R"/>
+                                    <constraint firstAttribute="height" constant="392" id="HAw-Ic-OY3"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="edz-CG-p9G">
                                     <size key="itemSize" width="60" height="60"/>
@@ -121,16 +127,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="SFs-5q-0kH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="6" id="4PL-us-9Ba"/>
                             <constraint firstItem="QFS-ke-eYT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bg2-cj-lRI"/>
                             <constraint firstItem="QFS-ke-eYT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ju6-BY-Vzi"/>
-                            <constraint firstItem="huK-Je-bku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KqR-St-arm"/>
                             <constraint firstAttribute="trailing" secondItem="QFS-ke-eYT" secondAttribute="trailing" id="LYc-HN-bnw"/>
+                            <constraint firstItem="SFs-5q-0kH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NZr-l0-911"/>
                             <constraint firstItem="3QL-Rh-bMz" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TjW-S5-mOJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QFS-ke-eYT" secondAttribute="bottom" id="Xuy-xd-oyn"/>
-                            <constraint firstItem="huK-Je-bku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rIr-PC-EBg"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="gMT-i9-st0"/>
+                            <constraint firstAttribute="trailing" secondItem="SFs-5q-0kH" secondAttribute="trailing" constant="6" id="jMw-Sk-sLW"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3QL-Rh-bMz" secondAttribute="bottom" constant="20" id="tHZ-Ct-nNF"/>
-                            <constraint firstItem="huK-Je-bku" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u2p-zT-OL0"/>
                             <constraint firstItem="3QL-Rh-bMz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uBP-hR-EhA"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uPr-Of-ghv"/>
+                            <constraint firstItem="huK-Je-bku" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="vcN-rC-ugY"/>
                         </constraints>
                     </view>
                     <connections>
@@ -147,6 +156,7 @@
     </scenes>
     <resources>
         <image name="Background" width="70" height="70"/>
+        <image name="Border" width="30" height="30"/>
         <image name="Button" width="120" height="120"/>
     </resources>
 </document>
